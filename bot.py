@@ -12,9 +12,11 @@ def help_command(update, context):
     update.message.reply_text(responses.help())
 
 def handle_message(update, context):
-    txt = str(update.message.text).lower()
-    response = responses.sample_responses(txt)
-    update.message.reply_text(response)
+	txt = str(update.message.text).lower()
+	logger.info(txt)
+	response = responses.sample_responses(txt)
+	logger.info(response)
+	update.message.reply_text(response)
 
 def error(update, context):
     print(f"Update: {update} caused error: {context.error}")
