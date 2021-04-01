@@ -12,7 +12,7 @@ def sample_responses(input_text):
 	elif user_message == "contato":
 		return "http://alexsetta.com/ \n            Acesse! ☝️"
 
-	elif user_message == "info":
+	elif user_message in ("info", "inf", "rsi"):
 		return status.get()
 
 	return "Comando inválido. Tente: /help?"

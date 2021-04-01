@@ -34,15 +34,17 @@ def get():
 	indice = divisor*100/total
 
 	now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") 
+	print(now)
 	txt = f"{now}\n"
 	txt += f"Compra: {int(compra/total*100)}%\n" 
 	txt += f"Venda: {int(venda/total*100)}%\n" 
 	txt += f"Neutro: {int(neutro/total*100)}% \n" 
-	txt += f"Resumo: {resumo} / RSI: {rsi} ({rsival}%)\n"
-	if rsival < 30:
-		txt += "\nRSI: COMPRAR"
-	elif rsival > 70:
-		txt += "\nRSI: VENDER"
+	txt += f"Resumo: {resumo} \n"
+	txt += f"RSI: {rsi} ({rsival}%)\n"
+	if rsival <= 30:
+		txt += "AÇÃO: COMPRAR\n"
+	elif rsival >= 70:
+		txt += "AÇÃO: VENDER\n"
 	return txt
 		
 		
